@@ -1,0 +1,27 @@
+.main-header {
+    background-color: #0b111c;
+    border-bottom: 1px solid #1e2c3d;
+    padding: 20px 0;
+}
+
+.header-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    color: #66d9ff;
+    margin: 0;
+    font-size: 28px;
+}
+
+@media (max-width: 700px) {
+    .header-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

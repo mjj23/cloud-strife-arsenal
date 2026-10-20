@@ -1,0 +1,25 @@
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #e8edf5;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #66d9ff;
+}
+
+@media (max-width: 700px) {
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
