@@ -1,5 +1,6 @@
 import "./Header.css";
 import Navigation from "./Navigation";
+import Logo from "./logo";
 
 function Header() {
     return (
@@ -7,6 +8,7 @@ function Header() {
             <div className="header-content">
                 <h1>Cloud Strife Arsenal</h1>
                 <Navigation />
+                <Logo />
             </div>
         </header>
     );
