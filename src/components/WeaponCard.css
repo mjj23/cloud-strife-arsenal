@@ -1,0 +1,21 @@
+.weapon-card {
+    background-color: #111927;
+    border: 1px solid #1e2c3d;
+    padding: 20px;
+    text-align: center;
+}
+
+.weapon-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.weapon-card h3 {
+    color: #9bdcff;
+}
+
+.weapon-card p {
+    color: #aab3c0;
+    line-height: 1.5;
+}

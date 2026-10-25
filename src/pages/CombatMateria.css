@@ -1,0 +1,73 @@
+.combat-heading {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto 30px;
+    text-align: center;
+}
+
+.combat-heading h2 {
+    color: #66d9ff;
+    font-size: 36px;
+}
+
+.combat-heading p {
+    color: #aab3c0;
+    line-height: 1.6;
+}
+
+.combat-section,
+.materia-info {
+    width: 90%;
+    max-width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.combat-text,
+.combat-image,
+.materia-picture,
+.materia-description {
+    flex: 1;
+}
+
+.combat-text h2,
+.materia-description h2 {
+    color: #66d9ff;
+}
+
+.combat-text p,
+.materia-description p {
+    color: #aab3c0;
+    line-height: 1.6;
+}
+
+.combat-image img,
+.materia-picture img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.materia-list {
+    background-color: #111927;
+    border-left: 4px solid #66d9ff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.materia-list strong {
+    color: #9bdcff;
+}
+
+@media (max-width: 700px) {
+    .combat-section,
+    .materia-info {
+        flex-direction: column;
+    }
+
+    .combat-heading h2 {
+        font-size: 30px;
+    }
+}

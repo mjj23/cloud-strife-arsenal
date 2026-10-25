@@ -1,0 +1,41 @@
+.location-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: #111927;
+    border-left: 4px solid #66d9ff;
+}
+
+.location-card img {
+    width: 220px;
+    height: 160px;
+    object-fit: contain;
+}
+
+.location-card h3 {
+    color: #66d9ff;
+    margin-top: 0;
+}
+
+.location-card p {
+    color: #aab3c0;
+    line-height: 1.5;
+}
+
+.location-card strong {
+    color: #9bdcff;
+}
+
+@media (max-width: 700px) {
+    .location-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .location-card img {
+        width: 100%;
+        max-width: 250px;
+    }
+}

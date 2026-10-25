@@ -1,0 +1,28 @@
+.locations-heading {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto 30px;
+    text-align: center;
+}
+
+.locations-heading h2 {
+    color: #66d9ff;
+    font-size: 36px;
+}
+
+.locations-heading p {
+    color: #aab3c0;
+    line-height: 1.6;
+}
+
+.locations-list {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+}
+
+@media (max-width: 700px) {
+    .locations-heading h2 {
+        font-size: 30px;
+    }
+}
