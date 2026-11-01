@@ -1,3 +1,16 @@
+.main-nav {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #66d9ff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -17,9 +30,20 @@
 }
 
 @media (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+        margin: auto;
+    }
+
     .nav-links {
+        display: none;
         flex-direction: column;
         text-align: center;
         gap: 12px;
+        margin-top: 15px;
+    }
+
+    .nav-links.show-menu {
+        display: flex;
     }
 }

@@ -1,15 +1,28 @@
+import { useState } from "react";
 import "./Navigation.css";
 
 function Navigation({ setPage }) {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     function changePage(event, pageName) {
         event.preventDefault();
         setPage(pageName);
+        setMenuOpen(false);
         window.scrollTo(0, 0);
     }
 
     return (
-        <nav>
-            <ul className="nav-links">
+        <nav className="main-nav">
+
+            <button
+                className="menu-toggle"
+                onClick={() => setMenuOpen(!menuOpen)}
+                aria-label="Toggle navigation menu"
+            >
+                {menuOpen ? "✕" : "☰"}
+            </button>
+
+            <ul className={`nav-links ${menuOpen ? "show-menu" : ""}`}>
                 <li>
                     <a href="#" onClick={(event) => changePage(event, "home")}>
                         Home
@@ -40,6 +53,7 @@ function Navigation({ setPage }) {
                     </a>
                 </li>
             </ul>
+
         </nav>
     );
 }

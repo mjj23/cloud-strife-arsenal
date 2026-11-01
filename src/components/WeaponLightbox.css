@@ -1,0 +1,60 @@
+.lightbox-section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.lightbox-section h2 {
+    color: #66d9ff;
+}
+
+.lightbox-section p {
+    color: #aab3c0;
+    line-height: 1.6;
+}
+
+.lightbox-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.lightbox-item {
+    width: 220px;
+    background-color: #111927;
+    border: 1px solid #1e2c3d;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.lightbox-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.lightbox-item span {
+    display: block;
+    margin-top: 10px;
+    color: #9bdcff;
+    font-weight: bold;
+}
+
+.lightbox-item:hover {
+    background-color: #1a2638;
+}
+
+@media (max-width: 700px) {
+    .lightbox-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lightbox-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}

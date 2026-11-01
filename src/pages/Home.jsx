@@ -1,3 +1,7 @@
+import WeaponLightbox from "../components/WeaponLightbox";import 
+VideoSection from "../components/VideoSection";
+import ContactForm from "../components/ContactForm";
+import WeaponSlideshow from "../components/WeaponSlideshow";
 import "./Home.css";
 
 import worldMap from "../assets/world-map.webp";
@@ -61,6 +65,13 @@ function Home() {
 
             </section>
 
+            <WeaponSlideshow />
+
+            <WeaponLightbox />
+
+            <ContactForm />
+
+            <VideoSection />
 
             <section className="materia-section">
 
