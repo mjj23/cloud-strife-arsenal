@@ -1,53 +1,29 @@
+import { useEffect, useState } from "react";
 import "./Weapons.css";
-
-import busterSword from "../assets/buster-sword.png";
-import crystalSword from "../assets/crystal-sword1.png";
-import runeBlade from "../assets/rune-blade.png";
-import umbralBlade from "../assets/umbral-blade.png";
-import igneousSaber from "../assets/igneous-saber.png";
-import sleekSaber from "../assets/sleek-saber.png";
-import slipstreamSaber from "../assets/slipstream-saber.png";
-
 import WeaponCard from "../components/WeaponCard.jsx";
 
 function Weapons() {
-    const weapons = [
-        {
-            name: "Buster Sword",
-            image: busterSword,
-            description: "Cloud's iconic starting weapon."
-        },
-        {
-            name: "Crystal Sword",
-            image: crystalSword,
-            description: "A powerful sword made for heavy attacks."
-        },
-        {
-            name: "Rune Blade",
-            image: runeBlade,
-            description: "A weapon designed for strong Materia use."
-        },
-        {
-            name: "Umbral Blade",
-            image: umbralBlade,
-            description: "A dark blade made for aggressive combat."
-        },
-        {
-            name: "Igneous Saber",
-            image: igneousSaber,
-            description: "A powerful saber focused on physical attacks."
-        },
-        {
-            name: "Sleek Saber",
-            image: sleekSaber,
-            description: "A lighter weapon made for speed."
-        },
-        {
-            name: "Slipstream Saber",
-            image: slipstreamSaber,
-            description: "A fast saber made for aggressive combat."
+    const [weapons, setWeapons] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const serverUrl = "https://node-hello-world-ojxv.onrender.com";
+
+    useEffect(() => {
+        async function loadWeapons() {
+            try {
+                const response = await fetch(`${serverUrl}/api/weapons`);
+                const data = await response.json();
+
+                setWeapons(data);
+                setLoading(false);
+            } catch (error) {
+                console.error("Could not load weapons:", error);
+                setLoading(false);
+            }
         }
-    ];
+
+        loadWeapons();
+    }, []);
 
     return (
         <main>
@@ -62,14 +38,18 @@ function Weapons() {
             </section>
 
             <section className="weapons-grid">
-                {weapons.map((weapon) => (
-                    <WeaponCard
-                        key={weapon.name}
-                        image={weapon.image}
-                        name={weapon.name}
-                        description={weapon.description}
-                    />
-                ))}
+                {loading ? (
+                    <p>Loading weapons...</p>
+                ) : (
+                    weapons.map((weapon) => (
+                        <WeaponCard
+                            key={weapon.id}
+                            image={`${serverUrl}/${weapon.image}`}
+                            name={weapon.name}
+                            description={weapon.description}
+                        />
+                    ))
+                )}
             </section>
         </main>
     );
